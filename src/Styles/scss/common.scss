@@ -1,0 +1,83 @@
+@import './styled';
+
+@keyframes changeBgColor {
+  100% {
+    width: 200vw;
+    height: 200vh;
+    border-radius: 0px;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.App {
+  font-family: $regularFont;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  .switchWrap {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    .switchIcon {
+      position: fixed;
+      bottom: 50px;
+      width: 40px;
+      height: 40px;
+      transition: all 0.3s;
+      &:hover {
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      transition: all 0.3s;
+      bottom: 0px;
+      width: 300px;
+      height: 150px;
+      background-color: $atmoxColor;
+    }
+  }
+  .atok {
+    &:hover {
+      background-color: $katoColor;
+    }
+    &:active {
+      animation-name: changeBgColor;
+      animation-duration: 0.5s;
+    }
+  }
+  .ktoa {
+    &:hover {
+      background-color: $atmoxColor;
+    }
+    &:active {
+      animation-name: changeBgColor;
+      animation-duration: 0.5s;
+    }
+  }
+}
+.atmoxHome {
+  background-color: $atmoxColor;
+  width: 100vw;
+  height: 100vh;
+}
+.katoHome {
+  background-color: $katoColor;
+  width: 100vw;
+  height: 100vh;
+}

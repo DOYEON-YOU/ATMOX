@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import './Styles/css/main.css';
+import Home_ATMOX from './Components/ATMOX/Home_ATMOX'
+import Home_KATOMORI from './Components/KATOMORI/Home_KATOMORI'
+import Home from './Components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/atmox' element={<Home_ATMOX/>}/>
+        <Route path='/katomori' element={<Home_KATOMORI/>}/>
+      </Routes>
     </div>
   );
 }
